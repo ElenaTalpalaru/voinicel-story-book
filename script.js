@@ -1,11 +1,22 @@
 // Voinicel Story Book JavaScript
 
-// Print function
+// Print function - Multiple ways to ensure it works
 function printBook() {
     window.print();
 }
 
-// Optional: Add image upload functionality
+// Also add event listener for the button
+document.addEventListener('DOMContentLoaded', function() {
+    const printButton = document.querySelector('.print-button');
+    
+    if (printButton) {
+        printButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.print();
+        });
+    }
+    
+    // Rest of the code...
 function addImageToPlaceholder(placeholderElement, imageFile) {
     const reader = new FileReader();
     reader.onload = function(e) {
@@ -84,3 +95,4 @@ function resetImages() {
         `;
     });
 }
+})
